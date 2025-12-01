@@ -276,13 +276,13 @@ function ContentTracksSection() {
           {contentTracks.map((track, index) => (
             <StaggerItem key={index}>
               <motion.div
-                className="bg-[#f5f1e8] p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-[#f5f3ff] p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 whileHover={{ y: -8, scale: 1.02, rotate: 1 }}
               >
-              <div className="w-20 h-20 mb-6 text-[#2d1f1a]">
+              <div className="w-20 h-20 mb-6 text-[#1a0d33]">
                 {track.icon}
               </div>
-              <h3 className="text-xl font-bold text-[#2d1f1a] mb-4 leading-tight">
+              <h3 className="text-xl font-bold text-[#1a0d33] mb-4 leading-tight">
                 {track.title}
               </h3>
               <p className="text-gray-700 leading-relaxed text-base">
@@ -315,14 +315,14 @@ function ContentTracksSection() {
             {contentTracks.map((track, index) => (
               <motion.div
                 key={index}
-                className="bg-[#f5f1e8] p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-grab active:cursor-grabbing flex-shrink-0"
+                className="bg-[#f5f3ff] p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-grab active:cursor-grabbing flex-shrink-0"
                 whileHover={{ y: -4 }}
                 style={{ width: `${cardWidthPercent}%` }}
               >
-                <div className="w-20 h-20 mb-6 text-[#2d1f1a]">
+                <div className="w-20 h-20 mb-6 text-[#1a0d33]">
                   {track.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#2d1f1a] mb-4 leading-tight">
+                <h3 className="text-xl font-bold text-[#1a0d33] mb-4 leading-tight">
                   {track.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-base">
@@ -339,7 +339,7 @@ function ContentTracksSection() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? 'bg-[#a0430a] w-8' : 'bg-gray-300 w-2'
+                  currentIndex === index ? 'bg-[#4010fe] w-8' : 'bg-gray-300 w-2'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -355,18 +355,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#dfe8e6]">
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e6e0ff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
-              <a href="#" className="text-[#a0430a] font-bold text-lg">Ondo Blockchain Summit</a>
+              <a href="#" className="text-[#4010fe] font-bold text-lg">Ondo Blockchain Summit</a>
               <div className="hidden md:flex space-x-6">
-                <a href="#speakers" className="text-gray-700 hover:text-[#a0430a] transition">Speakers</a>
-                <a href="#hackathon" className="text-gray-700 hover:text-[#a0430a] transition">Hackathon</a>
-                <a href="#agenda" className="text-gray-700 hover:text-[#a0430a] transition">Agenda</a>
+                <a href="#speakers" className="text-gray-700 hover:text-[#4010fe] transition">Speakers</a>
+                <a href="#hackathon" className="text-gray-700 hover:text-[#4010fe] transition">Hackathon</a>
+                <a href="#agenda" className="text-gray-700 hover:text-[#4010fe] transition">Agenda</a>
               </div>
             </div>
-            <button className="bg-[#a0430a] text-white px-6 py-2 rounded-full hover:bg-[#8a3a08] transition">
+            <button className="bg-[#4010fe] text-white px-6 py-2 rounded-full hover:bg-[#2d0bb3] transition">
               Register Now
             </button>
           </div>
@@ -390,7 +390,7 @@ export default function Home() {
               </h1>
             </ScrollAnimation>
             <ScrollAnimation delay={0.2}>
-              <h2 className="text-4xl lg:text-6xl font-bold text-[#a0430a] mb-8">
+              <h2 className="text-4xl lg:text-6xl font-bold text-[#4010fe] mb-8">
                 Ondo Blockchain Summit 2026
               </h2>
             </ScrollAnimation>
@@ -402,11 +402,11 @@ export default function Home() {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <StaggerItem>
                 <motion.div 
-                  className="bg-[#dfe8e6] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                  className="bg-[#e6e0ff] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <motion.div 
-                    className="text-4xl font-bold text-[#a0430a] mb-2"
+                    className="text-4xl font-bold text-[#4010fe] mb-2"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
@@ -418,11 +418,11 @@ export default function Home() {
               </StaggerItem>
               <StaggerItem>
                 <motion.div 
-                  className="bg-[#dfe8e6] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                  className="bg-[#e6e0ff] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <motion.div 
-                    className="text-4xl font-bold text-[#a0430a] mb-2"
+                    className="text-4xl font-bold text-[#4010fe] mb-2"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.95, type: "spring", stiffness: 200 }}
@@ -434,11 +434,11 @@ export default function Home() {
               </StaggerItem>
               <StaggerItem>
                 <motion.div 
-                  className="bg-[#dfe8e6] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                  className="bg-[#e6e0ff] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <motion.div 
-                    className="text-4xl font-bold text-[#a0430a] mb-2"
+                    className="text-4xl font-bold text-[#4010fe] mb-2"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 1.1, type: "spring", stiffness: 200 }}
@@ -452,14 +452,14 @@ export default function Home() {
             <ScrollAnimation delay={0.6}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button 
-                  className="bg-[#a0430a] text-white px-8 py-4 rounded-full hover:bg-[#8a3a08] transition font-semibold"
+                  className="bg-[#4010fe] text-white px-8 py-4 rounded-full hover:bg-[#2d0bb3] transition font-semibold"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   APPLY TO SPONSOR
                 </motion.button>
                 <motion.button 
-                  className="bg-white border-2 border-[#a0430a] text-[#a0430a] px-8 py-4 rounded-full hover:bg-[#dfe8e6] transition font-semibold"
+                  className="bg-white border-2 border-[#4010fe] text-[#4010fe] px-8 py-4 rounded-full hover:bg-[#e6e0ff] transition font-semibold"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -472,7 +472,7 @@ export default function Home() {
       </section>
 
       {/* Date section */}
-      <section className="relative bg-gradient-to-br from-[#dfe8e6] to-white py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#e6e0ff] to-white py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[0].src}
@@ -488,7 +488,7 @@ export default function Home() {
           <div className="text-center">
             <ScrollAnimation delay={0.1}>
               <div className="mb-6">
-                <span className="text-[#a0430a] font-semibold text-lg">Ondo State, Nigeria</span>
+                <span className="text-[#4010fe] font-semibold text-lg">Ondo State, Nigeria</span>
               </div>
             </ScrollAnimation>
             <ScrollAnimation delay={0.2}>
@@ -510,7 +510,7 @@ export default function Home() {
             </ScrollAnimation>
             <ScrollAnimation delay={0.5} direction="scale">
               <div className="mb-8">
-                <span className="text-[#a0430a] font-bold text-xl">#ONDOSUMMIT2026</span>
+                <span className="text-[#4010fe] font-bold text-xl">#ONDOSUMMIT2026</span>
               </div>
             </ScrollAnimation>
           </div>
@@ -518,7 +518,7 @@ export default function Home() {
       </section>
 
       {/* Location Section */}
-      <section className="relative py-16 bg-[#dfe8e6] overflow-hidden">
+      <section className="relative py-16 bg-[#e6e0ff] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-20">
           <motion.img
             src={ondoImageGallery[1].src}
@@ -537,7 +537,7 @@ export default function Home() {
                   className="bg-white/95 backdrop-blur-lg p-8 rounded-lg shadow-lg border border-white/50"
                   whileHover={{ scale: 1.02, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15)" }}
                 >
-                  <h3 className="text-2xl font-bold text-[#a0430a] mb-4 tracking-wide uppercase">EKO CONVENTION CENTER</h3>
+                  <h3 className="text-2xl font-bold text-[#4010fe] mb-4 tracking-wide uppercase">EKO CONVENTION CENTER</h3>
                   <p className="text-xl text-gray-700 mb-2">ONDO STATE, NIGERIA</p>
                   <p className="text-lg text-gray-600">20–21 FEBRUARY 2026</p>
                 </motion.div>
@@ -576,7 +576,7 @@ export default function Home() {
                 />
               </motion.div>
               <motion.div
-                className="absolute -top-8 -right-6 bg-white/90 shadow-lg px-6 py-4 rounded-2xl uppercase text-xs font-semibold tracking-[0.3em] text-[#a0430a]"
+                className="absolute -top-8 -right-6 bg-white/90 shadow-lg px-6 py-4 rounded-2xl uppercase text-xs font-semibold tracking-[0.3em] text-[#4010fe]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -593,7 +593,7 @@ export default function Home() {
       <ContentTracksSection />
 
       {/* Live Performances */}
-      <section className="relative py-20 bg-gradient-to-br from-[#dfe8e6] to-white overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-[#e6e0ff] to-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[2].src}
@@ -631,7 +631,7 @@ export default function Home() {
               ))}
             </motion.div>
             <motion.div
-              className="absolute -top-12 right-6 bg-white/90 px-4 py-2 rounded-full text-sm font-semibold text-[#a0430a] shadow-md"
+              className="absolute -top-12 right-6 bg-white/90 px-4 py-2 rounded-full text-sm font-semibold text-[#4010fe] shadow-md"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -647,7 +647,7 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.05, rotate: -2 }}
               >
                 <motion.div 
-                  className="w-32 h-32 bg-[#a0430a] rounded-full mx-auto mb-4 flex items-center justify-center"
+                  className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -655,7 +655,7 @@ export default function Home() {
                 </motion.div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Adeola Adedewe</h3>
                 <p className="text-gray-600 mb-4">Founder & CEO</p>
-                <p className="text-[#a0430a] font-semibold">Kredete</p>
+                <p className="text-[#4010fe] font-semibold">Kredete</p>
               </motion.div>
             </StaggerItem>
             <StaggerItem>
@@ -664,7 +664,7 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.05, rotate: 2 }}
               >
                 <motion.div 
-                  className="w-32 h-32 bg-[#a0430a] rounded-full mx-auto mb-4 flex items-center justify-center"
+                  className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                   whileHover={{ rotate: -360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -680,7 +680,7 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.05, rotate: -2 }}
               >
                 <motion.div 
-                  className="w-32 h-32 bg-[#a0430a] rounded-full mx-auto mb-4 flex items-center justify-center"
+                  className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -693,7 +693,7 @@ export default function Home() {
           </StaggerContainer>
           <ScrollAnimation delay={0.3}>
             <div className="text-center mt-8">
-              <p className="text-xl text-[#a0430a] font-semibold">Music, energy, and pure inspiration.</p>
+              <p className="text-xl text-[#4010fe] font-semibold">Music, energy, and pure inspiration.</p>
             </div>
           </ScrollAnimation>
         </div>
@@ -754,11 +754,11 @@ export default function Home() {
             ].map((speaker, idx) => (
               <StaggerItem key={idx}>
                 <motion.div 
-                  className="bg-[#dfe8e6] p-6 rounded-lg text-center"
+                  className="bg-[#e6e0ff] p-6 rounded-lg text-center"
                   whileHover={{ y: -8, scale: 1.05, rotate: 1 }}
                 >
                   <motion.div 
-                    className="w-24 h-24 bg-[#a0430a] rounded-full mx-auto mb-4 flex items-center justify-center"
+                    className="w-24 h-24 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
@@ -766,7 +766,7 @@ export default function Home() {
                   </motion.div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{speaker.name}</h3>
                   <p className="text-sm text-gray-600 mb-2">{speaker.title}</p>
-                  <p className="text-[#a0430a] font-semibold text-sm">{speaker.company}</p>
+                  <p className="text-[#4010fe] font-semibold text-sm">{speaker.company}</p>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -774,7 +774,7 @@ export default function Home() {
           <ScrollAnimation delay={0.3}>
             <div className="text-center mt-12">
               <motion.button 
-                className="text-[#a0430a] font-semibold hover:underline"
+                className="text-[#4010fe] font-semibold hover:underline"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -786,7 +786,7 @@ export default function Home() {
       </section>
 
       {/* Agenda Section */}
-      <section id="agenda" className="relative py-20 bg-[#dfe8e6] overflow-hidden">
+      <section id="agenda" className="relative py-20 bg-[#e6e0ff] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[3].src}
@@ -796,7 +796,7 @@ export default function Home() {
             animate={{ scale: 1.05, y: 0 }}
             transition={{ duration: 16, repeat: Infinity, repeatType: 'mirror' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#dfe8e6]/60 via-white/50 to-[#dfe8e6]/55" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#e6e0ff]/60 via-white/50 to-[#e6e0ff]/55" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
@@ -810,7 +810,7 @@ export default function Home() {
                 className="bg-white p-8 rounded-lg shadow-lg"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
-                <h3 className="text-2xl font-bold text-[#a0430a] mb-4">Thursday, February 19th, 2026</h3>
+                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Thursday, February 19th, 2026</h3>
                 <div className="space-y-2 text-gray-700">
                   <p className="font-semibold">Pre-Summit Hackathon & Builder Day</p>
                   <p className="font-semibold">Interactive Exhibitions</p>
@@ -823,7 +823,7 @@ export default function Home() {
                 className="bg-white p-8 rounded-lg shadow-lg"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
-                <h3 className="text-2xl font-bold text-[#a0430a] mb-4">Friday, February 20th, 2026</h3>
+                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Friday, February 20th, 2026</h3>
                 <div className="space-y-2 text-gray-700">
                   <p>Registration & Breakfast</p>
                   <p>Welcome Remarks</p>
@@ -845,7 +845,7 @@ export default function Home() {
                 className="bg-white p-8 rounded-lg shadow-lg"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
-                <h3 className="text-2xl font-bold text-[#a0430a] mb-4">Saturday, February 21st, 2026</h3>
+                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Saturday, February 21st, 2026</h3>
                 <div className="space-y-2 text-gray-700">
                   <p className="font-semibold">Closing Beach Celebration</p>
                   <p>Side Events & Mixers</p>
@@ -889,11 +889,11 @@ export default function Home() {
             {["Kagan", "Eric"].map((name, idx) => (
               <StaggerItem key={idx}>
                 <motion.div 
-                  className="bg-[#dfe8e6] p-8 rounded-lg text-center"
+                  className="bg-[#e6e0ff] p-8 rounded-lg text-center"
                   whileHover={{ y: -10, scale: 1.05, rotate: 2 }}
                 >
                   <motion.div 
-                    className="w-32 h-32 bg-[#a0430a] rounded-full mx-auto mb-4 flex items-center justify-center"
+                    className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                     whileHover={{ rotate: 360, scale: 1.15 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -908,7 +908,7 @@ export default function Home() {
       </section>
 
       {/* Hackathon Section */}
-      <section id="hackathon" className="relative py-20 bg-gradient-to-br from-[#dfe8e6] to-white overflow-hidden">
+      <section id="hackathon" className="relative py-20 bg-gradient-to-br from-[#e6e0ff] to-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[0].src}
@@ -918,7 +918,7 @@ export default function Home() {
             animate={{ scale: 1.02 }}
             transition={{ duration: 20, repeat: Infinity, repeatType: 'mirror' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/45 via-[#dfe8e6]/50 to-white/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/45 via-[#e6e0ff]/50 to-white/55" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
@@ -937,7 +937,7 @@ export default function Home() {
                 className="bg-white p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05 }}
               >
-                <h3 className="text-2xl font-bold text-[#a0430a] mb-4">Price</h3>
+                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Price</h3>
                 <p className="text-gray-700">Bonus prizes for innovation & community impact</p>
               </motion.div>
             </StaggerItem>
@@ -946,7 +946,7 @@ export default function Home() {
                 className="bg-white p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05 }}
               >
-                <h3 className="text-2xl font-bold text-[#a0430a] mb-4">Timeline</h3>
+                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Timeline</h3>
                 <p className="text-gray-700">July 2 – September 10, 2026</p>
               </motion.div>
             </StaggerItem>
@@ -955,7 +955,7 @@ export default function Home() {
                 className="bg-white p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05 }}
               >
-                <h3 className="text-2xl font-bold text-[#a0430a] mb-4">Team Size</h3>
+                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Team Size</h3>
                 <p className="text-gray-700 mb-2">4–5 members per team</p>
                 <p className="text-sm text-gray-600">Focus Areas: Blockchain, Fintech, Stablecoins, Impact, DeFi</p>
               </motion.div>
@@ -989,10 +989,10 @@ export default function Home() {
             </ScrollAnimation>
             <ScrollAnimation delay={0.2} direction="scale">
               <motion.div 
-                className="bg-[#dfe8e6] p-12 rounded-lg mb-12"
+                className="bg-[#e6e0ff] p-12 rounded-lg mb-12"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-[#a0430a] font-bold text-2xl">Sponsor Logo</div>
+                <div className="text-[#4010fe] font-bold text-2xl">Sponsor Logo</div>
               </motion.div>
             </ScrollAnimation>
             <ScrollAnimation delay={0.3}>
@@ -1002,10 +1002,10 @@ export default function Home() {
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <StaggerItem key={i}>
                   <motion.div 
-                    className="bg-[#dfe8e6] p-8 rounded-lg"
+                    className="bg-[#e6e0ff] p-8 rounded-lg"
                     whileHover={{ scale: 1.1, rotate: 2 }}
                   >
-                    <div className="text-[#a0430a] font-semibold text-center">Sponsor {i}</div>
+                    <div className="text-[#4010fe] font-semibold text-center">Sponsor {i}</div>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -1017,10 +1017,10 @@ export default function Home() {
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <StaggerItem key={i}>
                   <motion.div 
-                    className="bg-[#dfe8e6] p-8 rounded-lg"
+                    className="bg-[#e6e0ff] p-8 rounded-lg"
                     whileHover={{ scale: 1.1, rotate: -2 }}
                   >
-                    <div className="text-[#a0430a] font-semibold text-center">Company {i}</div>
+                    <div className="text-[#4010fe] font-semibold text-center">Company {i}</div>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -1032,10 +1032,10 @@ export default function Home() {
               {[1, 2, 3, 4].map((i) => (
                 <StaggerItem key={i}>
                   <motion.div 
-                    className="bg-[#dfe8e6] p-8 rounded-lg"
+                    className="bg-[#e6e0ff] p-8 rounded-lg"
                     whileHover={{ scale: 1.1 }}
                   >
-                    <div className="text-[#a0430a] font-semibold text-center">Media {i}</div>
+                    <div className="text-[#4010fe] font-semibold text-center">Media {i}</div>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -1045,7 +1045,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#a0430a] to-[#8a3a08] text-white overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-[#4010fe] to-[#2d0bb3] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-25 pointer-events-none mix-blend-screen">
           <motion.img
             src={ondoImageGallery[3].src}
@@ -1069,7 +1069,7 @@ export default function Home() {
           </ScrollAnimation>
           <ScrollAnimation delay={0.3}>
             <motion.button 
-              className="bg-white text-[#a0430a] px-8 py-4 rounded-full hover:bg-[#dfe8e6] transition font-semibold text-lg"
+              className="bg-white text-[#4010fe] px-8 py-4 rounded-full hover:bg-[#e6e0ff] transition font-semibold text-lg"
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -1083,7 +1083,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="relative py-20 bg-[#dfe8e6] overflow-hidden">
+      <section className="relative py-20 bg-[#e6e0ff] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[1].src}
@@ -1093,7 +1093,7 @@ export default function Home() {
             animate={{ scale: 1.03, x: 0 }}
             transition={{ duration: 18, repeat: Infinity, repeatType: 'mirror' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#dfe8e6]/55 via-white/50 to-[#dfe8e6]/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#e6e0ff]/55 via-white/50 to-[#e6e0ff]/55" />
         </div>
         <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollAnimation>
@@ -1114,12 +1114,12 @@ export default function Home() {
               <motion.input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#a0430a]"
+                className="flex-1 px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4010fe]"
                 whileFocus={{ scale: 1.05 }}
               />
               <motion.button
                 type="submit"
-                className="bg-[#a0430a] text-white px-8 py-3 rounded-full hover:bg-[#8a3a08] transition font-semibold"
+                className="bg-[#4010fe] text-white px-8 py-3 rounded-full hover:bg-[#2d0bb3] transition font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
