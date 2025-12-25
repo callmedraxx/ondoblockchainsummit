@@ -229,7 +229,7 @@ function ContentTracksSection() {
   };
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           className="absolute -top-16 -left-10 w-72 h-72 rounded-full overflow-hidden shadow-2xl border border-white/40"
@@ -260,32 +260,32 @@ function ContentTracksSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/90 to-white/95" />
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <ScrollAnimation>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">Shaping What's Next</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">Shaping What's Next</h2>
           </ScrollAnimation>
           <ScrollAnimation delay={0.2}>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Each content track dives deep into the forces redefining Ondo State's digital economy.
             </p>
           </ScrollAnimation>
         </div>
         
         {/* Desktop: Show grid layout */}
-        <StaggerContainer className="hidden lg:grid lg:grid-cols-3 gap-8">
+        <StaggerContainer className="hidden lg:grid lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {contentTracks.map((track, index) => (
             <StaggerItem key={index}>
               <motion.div
-                className="bg-[#f5f3ff] p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-[#f5f3ff] p-4 sm:p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 whileHover={{ y: -8, scale: 1.02, rotate: 1 }}
               >
-              <div className="w-20 h-20 mb-6 text-[#1a0d33]">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mb-4 sm:mb-5 md:mb-6 text-[#1a0d33]">
                 {track.icon}
               </div>
-              <h3 className="text-xl font-bold text-[#1a0d33] mb-4 leading-tight">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#1a0d33] mb-4 leading-tight">
                 {track.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed text-base">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 {track.description}
               </p>
               </motion.div>
@@ -297,7 +297,7 @@ function ContentTracksSection() {
         <div className="lg:hidden relative overflow-hidden">
           <motion.div
             ref={containerRef}
-            className="flex gap-8"
+            className="flex gap-4 sm:gap-6 md:gap-8"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={handleDragEnd}
@@ -315,17 +315,17 @@ function ContentTracksSection() {
             {contentTracks.map((track, index) => (
               <motion.div
                 key={index}
-                className="bg-[#f5f3ff] p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-grab active:cursor-grabbing flex-shrink-0"
+                className="bg-[#f5f3ff] p-4 sm:p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-grab active:cursor-grabbing flex-shrink-0"
                 whileHover={{ y: -4 }}
                 style={{ width: `${cardWidthPercent}%` }}
               >
-                <div className="w-20 h-20 mb-6 text-[#1a0d33]">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mb-4 sm:mb-5 md:mb-6 text-[#1a0d33]">
                   {track.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#1a0d33] mb-4 leading-tight">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#1a0d33] mb-4 leading-tight">
                   {track.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {track.description}
                 </p>
               </motion.div>
@@ -357,16 +357,22 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e6e0ff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-8">
-              <a href="#" className="text-[#4010fe] font-bold text-lg">Ondo Blockchain Summit</a>
+          <div className="flex justify-between items-center h-12 md:h-14">
+            <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-8">
+              <a href="#" className="flex items-center -ml-2 sm:-ml-3 md:-ml-4">
+                <img 
+                  src="/logo.svg" 
+                  alt="Ondo Blockchain Summit" 
+                  className="h-32 w-32 sm:h-36 sm:w-36 md:h-40 md:w-40 mt-1 sm:mt-1.5 md:mt-2"
+                />
+              </a>
               <div className="hidden md:flex space-x-6">
                 <a href="#speakers" className="text-gray-700 hover:text-[#4010fe] transition">Speakers</a>
                 <a href="#hackathon" className="text-gray-700 hover:text-[#4010fe] transition">Hackathon</a>
                 <a href="#agenda" className="text-gray-700 hover:text-[#4010fe] transition">Agenda</a>
               </div>
             </div>
-            <button className="bg-[#4010fe] text-white px-6 py-2 rounded-full hover:bg-[#2d0bb3] transition">
+            <button className="bg-[#4010fe] text-white px-3 py-0.5 sm:px-4 sm:py-1 md:px-6 md:py-1.5 rounded-full hover:bg-[#2d0bb3] transition text-xs sm:text-sm md:text-base whitespace-nowrap">
               Register Now
             </button>
           </div>
@@ -375,7 +381,7 @@ export default function Home() {
       
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-32 overflow-hidden">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('https://windows10spotlight.com/wp-content/uploads/2023/11/ff761cca6f7efcda516fce6bd4ba73af.jpg')" }}
@@ -383,30 +389,30 @@ export default function Home() {
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/70" aria-hidden="true" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 text-white">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 text-white">
             <ScrollAnimation delay={0.1}>
-              <h1 className="text-5xl lg:text-7xl font-bold text-white mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4">
                 #OndoSummit2026
               </h1>
             </ScrollAnimation>
             <ScrollAnimation delay={0.2}>
-              <h2 className="text-4xl lg:text-6xl font-bold text-[#4010fe] mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-[#4010fe] mb-8">
                 Ondo Blockchain Summit 2026
               </h2>
             </ScrollAnimation>
             <ScrollAnimation delay={0.3}>
-              <p className="text-2xl text-gray-100 mb-12 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 mb-12 max-w-3xl mx-auto">
                 Welcome to Ondo State's First Conference on Blockchain Innovation
               </p>
             </ScrollAnimation>
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12">
               <StaggerItem>
                 <motion.div 
-                  className="bg-[#e6e0ff] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                  className="bg-[#e6e0ff] p-4 sm:p-6 md:p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <motion.div 
-                    className="text-4xl font-bold text-[#4010fe] mb-2"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#4010fe] mb-2"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
@@ -418,11 +424,11 @@ export default function Home() {
               </StaggerItem>
               <StaggerItem>
                 <motion.div 
-                  className="bg-[#e6e0ff] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                  className="bg-[#e6e0ff] p-4 sm:p-6 md:p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <motion.div 
-                    className="text-4xl font-bold text-[#4010fe] mb-2"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#4010fe] mb-2"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.95, type: "spring", stiffness: 200 }}
@@ -434,11 +440,11 @@ export default function Home() {
               </StaggerItem>
               <StaggerItem>
                 <motion.div 
-                  className="bg-[#e6e0ff] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                  className="bg-[#e6e0ff] p-4 sm:p-6 md:p-8 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <motion.div 
-                    className="text-4xl font-bold text-[#4010fe] mb-2"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#4010fe] mb-2"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 1.1, type: "spring", stiffness: 200 }}
@@ -452,14 +458,14 @@ export default function Home() {
             <ScrollAnimation delay={0.6}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button 
-                  className="bg-[#4010fe] text-white px-8 py-4 rounded-full hover:bg-[#2d0bb3] transition font-semibold"
+                  className="bg-[#4010fe] text-white px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full hover:bg-[#2d0bb3] transition font-semibold text-sm sm:text-base md:text-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   APPLY TO SPONSOR
                 </motion.button>
                 <motion.button 
-                  className="bg-white border-2 border-[#4010fe] text-[#4010fe] px-8 py-4 rounded-full hover:bg-[#e6e0ff] transition font-semibold"
+                  className="bg-white border-2 border-[#4010fe] text-[#4010fe] px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full hover:bg-[#e6e0ff] transition font-semibold text-sm sm:text-base md:text-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -472,7 +478,7 @@ export default function Home() {
       </section>
 
       {/* Date section */}
-      <section className="relative bg-gradient-to-br from-[#e6e0ff] to-white py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#e6e0ff] to-white py-12 sm:py-16 md:py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[0].src}
@@ -488,29 +494,29 @@ export default function Home() {
           <div className="text-center">
             <ScrollAnimation delay={0.1}>
               <div className="mb-6">
-                <span className="text-[#4010fe] font-semibold text-lg">Ondo State, Nigeria</span>
+                <span className="text-[#4010fe] font-semibold text-sm sm:text-base md:text-lg">Ondo State, Nigeria</span>
               </div>
             </ScrollAnimation>
             <ScrollAnimation delay={0.2}>
               <div className="mb-6">
-                <span className="text-gray-600 text-lg">Livespot Entertainment Center</span>
+                <span className="text-gray-600 text-sm sm:text-base md:text-lg">Livespot Entertainment Center</span>
               </div>
             </ScrollAnimation>
             <ScrollAnimation delay={0.3}>
               <div className="mb-8">
-                <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">20–21 February 2026</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">21 February 2026</h2>
               </div>
             </ScrollAnimation>
             <ScrollAnimation delay={0.4}>
               <div className="mb-8 space-y-2">
-                <p className="text-lg text-gray-700">Early bird tickets now available</p>
-                <p className="text-lg text-gray-700">Limited seats available</p>
-                <p className="text-lg text-gray-700 font-semibold">Join us Live in Ondo State</p>
+                <p className="text-sm sm:text-base md:text-lg text-gray-700">Early bird tickets now available</p>
+                <p className="text-sm sm:text-base md:text-lg text-gray-700">Limited seats available</p>
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 font-semibold">Join us Live in Ondo State</p>
               </div>
             </ScrollAnimation>
             <ScrollAnimation delay={0.5} direction="scale">
               <div className="mb-8">
-                <span className="text-[#4010fe] font-bold text-xl">#ONDOSUMMIT2026</span>
+                <span className="text-[#4010fe] font-bold text-base sm:text-lg md:text-xl">#ONDOSUMMIT2026</span>
               </div>
             </ScrollAnimation>
           </div>
@@ -518,7 +524,7 @@ export default function Home() {
       </section>
 
       {/* Location Section */}
-      <section className="relative py-16 bg-[#e6e0ff] overflow-hidden">
+      <section className="relative py-12 sm:py-14 md:py-16 bg-[#e6e0ff] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-20">
           <motion.img
             src={ondoImageGallery[1].src}
@@ -534,16 +540,16 @@ export default function Home() {
             <div className="text-center md:text-left space-y-8">
               <ScrollAnimation direction="scale">
                 <motion.div 
-                  className="bg-white/95 backdrop-blur-lg p-8 rounded-lg shadow-lg border border-white/50"
+                  className="bg-white/95 backdrop-blur-lg p-4 sm:p-6 md:p-8 rounded-lg shadow-lg border border-white/50"
                   whileHover={{ scale: 1.02, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15)" }}
                 >
-                  <h3 className="text-2xl font-bold text-[#4010fe] mb-4 tracking-wide uppercase">THE DOME</h3>
-                  <p className="text-xl text-gray-700 mb-2">ONDO STATE, NIGERIA</p>
-                  <p className="text-lg text-gray-600">20–21 FEBRUARY 2026</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#4010fe] mb-4 tracking-wide uppercase">THE DOME</h3>
+                  <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-2">ONDO STATE, NIGERIA</p>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600">21 FEBRUARY 2026</p>
                 </motion.div>
               </ScrollAnimation>
               <ScrollAnimation delay={0.2}>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
                   Explore Akure's vibrant energy—from the bustling Alagbaka business district to the serene landscapes that surround the capital of Ondo State. The summit venue places you at the heart of culture, innovation, and natural beauty.
                 </p>
               </ScrollAnimation>
@@ -559,7 +565,7 @@ export default function Home() {
                 <img
                   src={ondoImageGallery[2].src}
                   alt={ondoImageGallery[2].alt}
-                  className="w-full h-60 object-cover"
+                  className="w-full h-40 sm:h-48 md:h-60 object-cover"
                 />
               </motion.div>
               <motion.div
@@ -572,11 +578,11 @@ export default function Home() {
                 <img
                   src={ondoImageGallery[3].src}
                   alt={ondoImageGallery[3].alt}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-40 sm:h-48 md:h-56 object-cover"
                 />
               </motion.div>
               <motion.div
-                className="absolute -top-8 -right-6 bg-white/90 shadow-lg px-6 py-4 rounded-2xl uppercase text-xs font-semibold tracking-[0.3em] text-[#4010fe]"
+                className="absolute -top-8 -right-6 bg-white/90 shadow-lg px-4 sm:px-6 py-2 sm:py-4 rounded-2xl uppercase text-[10px] sm:text-xs font-semibold tracking-[0.3em] text-[#4010fe]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -593,7 +599,7 @@ export default function Home() {
       <ContentTracksSection />
 
       {/* Live Performances */}
-      <section className="relative py-20 bg-gradient-to-br from-[#e6e0ff] to-white overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#e6e0ff] to-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[2].src}
@@ -607,16 +613,16 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Live Performances – Feel the Vibe
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600">
                 Experience unforgettable live music at the Ondo Blockchain Summit.
               </p>
             </div>
           </ScrollAnimation>
-          <div className="relative mb-16">
+          <div className="relative mb-8 sm:mb-12 md:mb-16">
             <motion.div
               className="hidden md:grid grid-cols-3 gap-4"
               initial={{ opacity: 0, y: 20 }}
@@ -626,7 +632,7 @@ export default function Home() {
             >
               {[ondoImageGallery[0], ondoImageGallery[3], ondoImageGallery[1]].map((image, index) => (
                 <div key={index} className="rounded-3xl overflow-hidden shadow-lg border border-white/70">
-                  <img src={image.src} alt={image.alt} className="w-full h-44 object-cover" />
+                  <img src={image.src} alt={image.alt} className="w-full h-32 sm:h-40 md:h-44 object-cover" />
                 </div>
               ))}
             </motion.div>
@@ -640,67 +646,67 @@ export default function Home() {
               Scenes from Akure
             </motion.div>
           </div>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <StaggerItem>
               <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05, rotate: -2 }}
               >
                 <motion.div 
-                  className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
+                  className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-white text-4xl">A</span>
+                  <span className="text-white text-2xl sm:text-3xl md:text-4xl">A</span>
                 </motion.div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Adeola Adedewe</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2">Adeola Adedewe</h3>
                 <p className="text-gray-600 mb-4">Founder & CEO</p>
                 <p className="text-[#4010fe] font-semibold">Kredete</p>
               </motion.div>
             </StaggerItem>
             <StaggerItem>
               <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05, rotate: 2 }}
               >
                 <motion.div 
-                  className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
+                  className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                   whileHover={{ rotate: -360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-white text-4xl">F</span>
+                  <span className="text-white text-2xl sm:text-3xl md:text-4xl">F</span>
                 </motion.div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Femi Leye</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2">Femi Leye</h3>
                 <p className="text-gray-600 mb-4">electrifying rhythms on the strings.</p>
               </motion.div>
             </StaggerItem>
             <StaggerItem>
               <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05, rotate: -2 }}
               >
                 <motion.div 
-                  className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
+                  className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-white text-4xl">J</span>
+                  <span className="text-white text-2xl sm:text-3xl md:text-4xl">J</span>
                 </motion.div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Johnny Drille</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2">Johnny Drille</h3>
                 <p className="text-gray-600 mb-4">soulful sounds that move hearts.</p>
               </motion.div>
             </StaggerItem>
           </StaggerContainer>
           <ScrollAnimation delay={0.3}>
             <div className="text-center mt-8">
-              <p className="text-xl text-[#4010fe] font-semibold">Music, energy, and pure inspiration.</p>
+              <p className="text-base sm:text-lg md:text-xl text-[#4010fe] font-semibold">Music, energy, and pure inspiration.</p>
             </div>
           </ScrollAnimation>
         </div>
       </section>
 
       {/* Speakers Section */}
-      <section id="speakers" className="relative py-20 bg-white overflow-hidden">
+      <section id="speakers" className="relative py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute top-10 -left-24 w-64 h-64 rounded-full overflow-hidden shadow-2xl border border-white/60"
@@ -732,16 +738,16 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Meet the Voices of Ondo Blockchain Summit
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                 A glimpse at the thinkers, builders, and leaders shaping Ondo State's financial and innovation future.
               </p>
             </div>
           </ScrollAnimation>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               { 
                 name: "Amodu David", 
@@ -754,7 +760,7 @@ export default function Home() {
                 }
               },
               { 
-                name: "Crypttems", 
+                name: "Cryptems", 
                 role: "Event Host & Manager", 
                 description: "Founder of Afrobase. Organized one of the largest crypto events in FUTA with nearly a thousand attendees. Specializes in community activation and Web3 onboarding in South-West Nigeria.",
                 image: "/crypttems.jpeg",
@@ -793,11 +799,11 @@ export default function Home() {
             ].map((member, idx) => (
               <StaggerItem key={idx}>
                 <motion.div 
-                  className="bg-[#e6e0ff] p-6 rounded-lg text-center h-full flex flex-col"
+                  className="bg-[#e6e0ff] p-4 sm:p-5 md:p-6 rounded-lg text-center h-full flex flex-col"
                   whileHover={{ y: -8, scale: 1.05, rotate: 1 }}
                 >
                   <motion.div 
-                    className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden shadow-lg"
+                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
@@ -807,9 +813,9 @@ export default function Home() {
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="text-sm font-semibold text-[#4010fe] mb-3">{member.role}</p>
-                  <p className="text-sm text-gray-600 mb-4 flex-grow">{member.description}</p>
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{member.name}</h3>
+                  <p className="text-xs sm:text-sm font-semibold text-[#4010fe] mb-3">{member.role}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-4 flex-grow">{member.description}</p>
                   <div className="flex justify-center gap-3 flex-wrap">
                     {member.socials.x && (
                       <a 
@@ -819,7 +825,7 @@ export default function Home() {
                         className="text-gray-700 hover:text-[#4010fe] transition-colors"
                         aria-label={`${member.name} on X`}
                       >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                       </a>
@@ -832,7 +838,7 @@ export default function Home() {
                         className="text-gray-700 hover:text-[#4010fe] transition-colors"
                         aria-label={`${member.name} on LinkedIn`}
                       >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -845,7 +851,7 @@ export default function Home() {
                         className="text-gray-700 hover:text-[#4010fe] transition-colors"
                         aria-label={`${member.name} Portfolio`}
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                         </svg>
                       </a>
@@ -870,7 +876,7 @@ export default function Home() {
       </section>
 
       {/* Agenda Section */}
-      <section id="agenda" className="relative py-20 bg-[#e6e0ff] overflow-hidden">
+      <section id="agenda" className="relative py-12 sm:py-16 md:py-20 bg-[#e6e0ff] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[3].src}
@@ -884,33 +890,21 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Agenda Overview</h2>
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Agenda Overview</h2>
             </div>
           </ScrollAnimation>
-          <StaggerContainer className="space-y-12">
+          <StaggerContainer>
             <StaggerItem>
               <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg"
                 whileHover={{ x: 10, scale: 1.02 }}
               >
-                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Thursday, February 19th, 2026</h3>
-                <div className="space-y-2 text-gray-700">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#4010fe] mb-4">Saturday, February 21st, 2026</h3>
+                <div className="space-y-2 text-sm sm:text-base text-gray-700">
+                  <p className="font-semibold">Registration & Breakfast</p>
+                  <p className="font-semibold">Welcome Remarks</p>
                   <p className="font-semibold">Pre-Summit Hackathon & Builder Day</p>
-                  <p className="font-semibold">Interactive Exhibitions</p>
-                  <p>Side Events & Mixers</p>
-                </div>
-              </motion.div>
-            </StaggerItem>
-            <StaggerItem>
-              <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg"
-                whileHover={{ x: 10, scale: 1.02 }}
-              >
-                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Friday, February 20th, 2026</h3>
-                <div className="space-y-2 text-gray-700">
-                  <p>Registration & Breakfast</p>
-                  <p>Welcome Remarks</p>
                   <p>Keynote & Fireside Chat</p>
                   <p>Panel Sessions</p>
                   <p>Breakout Sessions</p>
@@ -921,17 +915,7 @@ export default function Home() {
                   <p>- Curated Networking Sessions</p>
                   <p>- Interactive Exhibitions</p>
                   <p>- Product Demos & Startup Pitches</p>
-                </div>
-              </motion.div>
-            </StaggerItem>
-            <StaggerItem>
-              <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg"
-                whileHover={{ x: 10, scale: 1.02 }}
-              >
-                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Saturday, February 21st, 2026</h3>
-                <div className="space-y-2 text-gray-700">
-                  <p className="font-semibold">Closing Beach Celebration</p>
+                  <p className="mt-4 font-semibold">Closing Beach Celebration</p>
                   <p>Side Events & Mixers</p>
                 </div>
               </motion.div>
@@ -941,7 +925,7 @@ export default function Home() {
       </section>
 
       {/* Creator Corner */}
-      <section className="relative py-20 bg-white overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute inset-x-0 top-0 h-64"
@@ -960,30 +944,30 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Creator Corner – Be Part of the Movement
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600">
                 Celebrate Ondo State's boldest voices in tech and creativity.
               </p>
             </div>
           </ScrollAnimation>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {["Kagan", "Eric"].map((name, idx) => (
               <StaggerItem key={idx}>
                 <motion.div 
-                  className="bg-[#e6e0ff] p-8 rounded-lg text-center"
+                  className="bg-[#e6e0ff] p-4 sm:p-6 md:p-8 rounded-lg text-center"
                   whileHover={{ y: -10, scale: 1.05, rotate: 2 }}
                 >
                   <motion.div 
-                    className="w-32 h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
+                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
                     whileHover={{ rotate: 360, scale: 1.15 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <span className="text-white text-4xl font-bold">{name[0]}</span>
+                    <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">{name[0]}</span>
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900">{name}</h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">{name}</h3>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -992,7 +976,7 @@ export default function Home() {
       </section>
 
       {/* Hackathon Section */}
-      <section id="hackathon" className="relative py-20 bg-gradient-to-br from-[#e6e0ff] to-white overflow-hidden">
+      <section id="hackathon" className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#e6e0ff] to-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[0].src}
@@ -1006,42 +990,42 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Building Ondo State's Stable Future with Blockchain
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                 A 10-week hybrid program designed to connect Ondo State's top talent with real-world blockchain challenges.
               </p>
             </div>
           </ScrollAnimation>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
             <StaggerItem>
               <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05 }}
               >
-                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Price</h3>
-                <p className="text-gray-700">Bonus prizes for innovation & community impact</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#4010fe] mb-4">Price</h3>
+                <p className="text-sm sm:text-base text-gray-700">Bonus prizes for innovation & community impact</p>
               </motion.div>
             </StaggerItem>
             <StaggerItem>
               <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05 }}
               >
-                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Timeline</h3>
-                <p className="text-gray-700">July 2 – September 10, 2026</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#4010fe] mb-4">Timeline</h3>
+                <p className="text-sm sm:text-base text-gray-700">July 2 – September 10, 2026</p>
               </motion.div>
             </StaggerItem>
             <StaggerItem>
               <motion.div 
-                className="bg-white p-8 rounded-lg shadow-lg text-center"
+                className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center"
                 whileHover={{ y: -10, scale: 1.05 }}
               >
-                <h3 className="text-2xl font-bold text-[#4010fe] mb-4">Team Size</h3>
-                <p className="text-gray-700 mb-2">4–5 members per team</p>
-                <p className="text-sm text-gray-600">Focus Areas: Blockchain, Fintech, Stablecoins, Impact, DeFi</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#4010fe] mb-4">Team Size</h3>
+                <p className="text-sm sm:text-base text-gray-700 mb-2">4–5 members per team</p>
+                <p className="text-xs sm:text-sm text-gray-600">Focus Areas: Blockchain, Fintech, Stablecoins, Impact, DeFi</p>
               </motion.div>
             </StaggerItem>
           </StaggerContainer>
@@ -1049,7 +1033,7 @@ export default function Home() {
       </section>
 
       {/* Sponsors Section */}
-      <section className="relative py-20 bg-white overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute inset-x-0 bottom-0 h-72"
@@ -1067,59 +1051,59 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-white/55 to-white/70" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <ScrollAnimation>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Title Sponsor</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-8">Title Sponsor</h2>
             </ScrollAnimation>
             <ScrollAnimation delay={0.2} direction="scale">
               <motion.div 
-                className="bg-[#e6e0ff] p-12 rounded-lg mb-12"
+                className="bg-[#e6e0ff] p-6 sm:p-8 md:p-12 rounded-lg mb-8 sm:mb-10 md:mb-12"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-[#4010fe] font-bold text-2xl">Sponsor Logo</div>
+                <div className="text-[#4010fe] font-bold text-lg sm:text-xl md:text-2xl">Sponsor Logo</div>
               </motion.div>
             </ScrollAnimation>
             <ScrollAnimation delay={0.3}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Other Sponsors</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-8">Other Sponsors</h2>
             </ScrollAnimation>
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 md:mb-12">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <StaggerItem key={i}>
                   <motion.div 
-                    className="bg-[#e6e0ff] p-8 rounded-lg"
+                    className="bg-[#e6e0ff] p-4 sm:p-6 md:p-8 rounded-lg"
                     whileHover={{ scale: 1.1, rotate: 2 }}
                   >
-                    <div className="text-[#4010fe] font-semibold text-center">Sponsor {i}</div>
+                    <div className="text-[#4010fe] font-semibold text-center text-sm sm:text-base">Sponsor {i}</div>
                   </motion.div>
                 </StaggerItem>
               ))}
             </StaggerContainer>
             <ScrollAnimation delay={0.4}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Top Companies That Attend</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-8">Top Companies That Attend</h2>
             </ScrollAnimation>
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 md:mb-12">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <StaggerItem key={i}>
                   <motion.div 
-                    className="bg-[#e6e0ff] p-8 rounded-lg"
+                    className="bg-[#e6e0ff] p-4 sm:p-6 md:p-8 rounded-lg"
                     whileHover={{ scale: 1.1, rotate: -2 }}
                   >
-                    <div className="text-[#4010fe] font-semibold text-center">Company {i}</div>
+                    <div className="text-[#4010fe] font-semibold text-center text-sm sm:text-base">Company {i}</div>
                   </motion.div>
                 </StaggerItem>
               ))}
             </StaggerContainer>
             <ScrollAnimation delay={0.5}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Media Partners</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-8">Media Partners</h2>
             </ScrollAnimation>
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {[1, 2, 3, 4].map((i) => (
                 <StaggerItem key={i}>
                   <motion.div 
-                    className="bg-[#e6e0ff] p-8 rounded-lg"
+                    className="bg-[#e6e0ff] p-4 sm:p-6 md:p-8 rounded-lg"
                     whileHover={{ scale: 1.1 }}
                   >
-                    <div className="text-[#4010fe] font-semibold text-center">Media {i}</div>
+                    <div className="text-[#4010fe] font-semibold text-center text-sm sm:text-base">Media {i}</div>
                   </motion.div>
                 </StaggerItem>
               ))}
@@ -1129,7 +1113,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#4010fe] to-[#2d0bb3] text-white overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#4010fe] to-[#2d0bb3] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-25 pointer-events-none mix-blend-screen">
           <motion.img
             src={ondoImageGallery[3].src}
@@ -1142,18 +1126,18 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollAnimation direction="scale">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Don't Miss Ondo State's Boldest Innovation Summit
             </h2>
           </ScrollAnimation>
           <ScrollAnimation delay={0.2}>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">
               Secure your spot to connect with fintech leaders, policy shapers, builders, and investors shaping Ondo State's digital economy.
             </p>
           </ScrollAnimation>
           <ScrollAnimation delay={0.3}>
             <motion.button 
-              className="bg-white text-[#4010fe] px-8 py-4 rounded-full hover:bg-[#e6e0ff] transition font-semibold text-lg"
+              className="bg-white text-[#4010fe] px-4 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full hover:bg-[#e6e0ff] transition font-semibold text-sm sm:text-base md:text-lg"
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -1161,13 +1145,13 @@ export default function Home() {
             </motion.button>
           </ScrollAnimation>
           <ScrollAnimation delay={0.4}>
-            <p className="mt-4 text-lg">Tickets are limited. Be part of the movement.</p>
+            <p className="mt-4 text-sm sm:text-base md:text-lg">Tickets are limited. Be part of the movement.</p>
           </ScrollAnimation>
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section className="relative py-20 bg-[#e6e0ff] overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 bg-[#e6e0ff] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.img
             src={ondoImageGallery[1].src}
@@ -1181,10 +1165,10 @@ export default function Home() {
         </div>
         <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollAnimation>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Stay in the Loop</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">Stay in the Loop</h2>
           </ScrollAnimation>
           <ScrollAnimation delay={0.2}>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-8">
               Be the first to hear about new speakers, schedules, and exclusive updates.
             </p>
           </ScrollAnimation>
@@ -1198,12 +1182,12 @@ export default function Home() {
               <motion.input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4010fe]"
+                className="flex-1 px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4010fe]"
                 whileFocus={{ scale: 1.05 }}
               />
               <motion.button
                 type="submit"
-                className="bg-[#4010fe] text-white px-8 py-3 rounded-full hover:bg-[#2d0bb3] transition font-semibold"
+                className="bg-[#4010fe] text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3 rounded-full hover:bg-[#2d0bb3] transition font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -1215,7 +1199,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative overflow-hidden bg-gray-950 text-white py-24">
+      <footer className="relative overflow-hidden bg-gray-950 text-white py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-32 -left-24 h-[32rem] w-[32rem] rounded-full bg-gradient-to-br from-[#facc15]/40 via-[#f97316]/20 to-transparent opacity-80 blur-3xl mix-blend-screen" />
           <div className="absolute -bottom-40 right-0 h-[36rem] w-[36rem] rounded-full bg-gradient-to-tr from-[#fde68a]/20 via-[#db2777]/25 to-transparent opacity-70 blur-3xl mix-blend-screen" />
@@ -1225,7 +1209,7 @@ export default function Home() {
         <div className="relative px-4 sm:px-6 lg:px-10">
           <ScrollAnimation>
             <div className="flex flex-col items-center justify-center text-center space-y-6">
-              <h3 className="text-lg md:text-xl font-semibold tracking-[0.35em] uppercase text-white/70">
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-[0.35em] uppercase text-white/70">
                 Connect With Us Online
               </h3>
               <motion.div 
