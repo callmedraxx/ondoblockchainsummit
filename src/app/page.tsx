@@ -537,7 +537,7 @@ export default function Home() {
                   className="bg-white/95 backdrop-blur-lg p-8 rounded-lg shadow-lg border border-white/50"
                   whileHover={{ scale: 1.02, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15)" }}
                 >
-                  <h3 className="text-2xl font-bold text-[#4010fe] mb-4 tracking-wide uppercase">EKO CONVENTION CENTER</h3>
+                  <h3 className="text-2xl font-bold text-[#4010fe] mb-4 tracking-wide uppercase">THE DOME</h3>
                   <p className="text-xl text-gray-700 mb-2">ONDO STATE, NIGERIA</p>
                   <p className="text-lg text-gray-600">20–21 FEBRUARY 2026</p>
                 </motion.div>
@@ -741,32 +741,116 @@ export default function Home() {
               </p>
             </div>
           </ScrollAnimation>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Adeola Adedewe", title: "Founder & CEO", company: "Kredete" },
-              { name: "Clarisse Hagege", title: "Founder And CEO", company: "Dfns" },
-              { name: "Jeff Handler", title: "Founder & CCO", company: "OpenTrade" },
-              { name: "Ogedegbe Uyoyo", title: "Managing Director, MD", company: "cNGN" },
-              { name: "Gabriel Olokunwonlu", title: "Founder And CEO", company: "Khaime" },
-              { name: "Yele W. Oyekola", title: "Founder & CEO", company: "Duplo" },
-              { name: "Bentzi Rabi", title: "Founder & CEO", company: "Utila" },
-              { name: "Amar Odedra", title: "Head of Investments", company: "Algorand Ventures" },
-            ].map((speaker, idx) => (
+              { 
+                name: "Amodu David", 
+                role: "Event Lead Organizer", 
+                description: "Business Developer for Injective in Africa. Experienced ecosystem builder with strong connections across African Web3 communities.",
+                image: "/david.JPG",
+                socials: {
+                  x: "https://x.com/BoluwatifeAmod",
+                  linkedin: "https://www.linkedin.com/in/david-boluwatife-amodu-736993247"
+                }
+              },
+              { 
+                name: "Crypttems", 
+                role: "Event Host & Manager", 
+                description: "Founder of Afrobase. Organized one of the largest crypto events in FUTA with nearly a thousand attendees. Specializes in community activation and Web3 onboarding in South-West Nigeria.",
+                image: "/crypttems.jpeg",
+                socials: {
+                  x: "https://x.com/Web3Tems",
+                  linkedin: "https://www.linkedin.com/in/oyewole-temitope"
+                }
+              },
+              { 
+                name: "Olorunyomi Gold (Ace)", 
+                role: "Head of Marketing/Operations", 
+                description: "Marketing strategist and community builder. Lead of Crypto Whales community; focuses on Web3 awareness, audience growth, and technical chart analysis.",
+                image: "/Ace.jpeg",
+                socials: {
+                  x: "https://x.com/0xGoldd"
+                }
+              },
+              { 
+                name: "Tolu Peters", 
+                role: "Head of Event Planning & Co-Host", 
+                description: "Community manager and content strategist. Ambassador at Koin Koin, Superteam Ondo State member, and community lead with Sui Yu. Experienced in event coordination and youth-focused blockchain activations.",
+                image: "/Tolu.jpeg",
+                socials: {
+                  portfolio: "https://toluwalase-mercy-peters-6dr6vr7.gamma.site"
+                }
+              },
+              { 
+                name: "Samuel Ademola (Muff)", 
+                role: "Partnership & Sponsorship Lead", 
+                description: "Member of Microsoft for Startups. Growth BD and product manager with experience in building partnerships across tech ecosystems.",
+                image: "/muff.jpeg",
+                socials: {
+                  linkedin: "https://linkedin.com/in/abimcy9h3r"
+                }
+              },
+            ].map((member, idx) => (
               <StaggerItem key={idx}>
                 <motion.div 
-                  className="bg-[#e6e0ff] p-6 rounded-lg text-center"
+                  className="bg-[#e6e0ff] p-6 rounded-lg text-center h-full flex flex-col"
                   whileHover={{ y: -8, scale: 1.05, rotate: 1 }}
                 >
                   <motion.div 
-                    className="w-24 h-24 bg-[#4010fe] rounded-full mx-auto mb-4 flex items-center justify-center"
+                    className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <span className="text-white text-2xl font-bold">{speaker.name[0]}</span>
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </motion.div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">{speaker.name}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{speaker.title}</p>
-                  <p className="text-[#4010fe] font-semibold text-sm">{speaker.company}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{member.name}</h3>
+                  <p className="text-sm font-semibold text-[#4010fe] mb-3">{member.role}</p>
+                  <p className="text-sm text-gray-600 mb-4 flex-grow">{member.description}</p>
+                  <div className="flex justify-center gap-3 flex-wrap">
+                    {member.socials.x && (
+                      <a 
+                        href={member.socials.x} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-700 hover:text-[#4010fe] transition-colors"
+                        aria-label={`${member.name} on X`}
+                      >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                      </a>
+                    )}
+                    {member.socials.linkedin && (
+                      <a 
+                        href={member.socials.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-700 hover:text-[#4010fe] transition-colors"
+                        aria-label={`${member.name} on LinkedIn`}
+                      >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
+                    )}
+                    {member.socials.portfolio && (
+                      <a 
+                        href={member.socials.portfolio} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-700 hover:text-[#4010fe] transition-colors"
+                        aria-label={`${member.name} Portfolio`}
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 </motion.div>
               </StaggerItem>
             ))}
